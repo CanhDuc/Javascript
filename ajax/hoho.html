@@ -1,0 +1,52 @@
+<div id="pagination-right" class="fl-right">
+  <ul>
+    <?php
+    // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
+    if ($listvideobyrequest['current_page'] > 1 && $listvideobyrequest['total_page'] > 1) {
+    ?>
+    <li>
+      <span>
+        <a href="" onclick="Pagination()"><<<input id="page" type="" name="page" value="<?php echo($listvideobyrequest['current_page'] - 1); ?>" hidden="" onclick="Pagination()" ></a>
+      </span>
+    </li>
+    <?php
+  }
+  ?>
+
+  <!-- Lặp khoảng giữa -->
+  <?php
+  for ($i = 1; $i <= $listvideobyrequest['total_page']; $i++) {
+  // Nếu là trang hiện tại thì hiển thị current
+  // ngược lại hiển thị thẻ a
+  if ($i == $listvideobyrequest['current_page']) {
+  ?>
+  <li class="current-page" onclick="Pagination()"><span><?php echo $i; ?></span></li>
+  <?php
+} else {
+?>
+<li onclick="Pagination()">
+  <span>
+    <?php echo $i;?>
+    <input id="page" type="" name="page" value="lol" hidden="">
+  </span>
+</li>
+<?php
+}
+} ?>
+
+
+<!-- nếu current_page < $total_page và total_page > 1 mới hiển thị nút next -->
+<?php
+if ($listvideobyrequest['current_page'] < $listvideobyrequest['total_page'] && $listvideobyrequest['current_page'] > 1) {
+?>
+<li onclick="Pagination()">
+  <span>
+    >>
+    <input id="page" type="" name="page" value="<?php echo ($listvideobyrequest['current_page'] + 1); ?>" hidden="">
+  </span>
+</li>
+<?php
+}
+?>
+</ul>
+</div> 

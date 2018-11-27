@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax1</title>
+</head>
+<body>
+	<script>
+		function Pagination(){
+			var key = document.getElementById("demo1").value;
+			console.log(key);
+
+			var page = document.getElementById("page").value;
+			
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("demo").innerHTML = this.responseText;
+				}
+			};
+			xmlhttp.open("GET", "haha.html", true);
+			xmlhttp.send();
+			console.log(page);
+
+		}
+
+
+	</script>
+	<p>Hehe</p>
+	<button type="button" onclick="testAjax()">Nhấn vào</button>
+	<a href=""><p id="demo">00<input id="demo1" type="" name="demo1" value="lol" hidden=""></p></a> 
+	<div style="width: 500px; height: 250px; background: red;"></div>
+	<p id="demo">11</p>
+
+	<span>
+		<a href="" >
+			<<
+			<input id="page" type="" name="page" value="lol" hidden="" onclick="Pagination()">
+		</a>
+	</span>
+</body>
+</html>

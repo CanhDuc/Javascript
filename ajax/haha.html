@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax2</title>
+</head>
+<body>
+  <script>
+    function testAjax(){
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange=function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML = this.responseText;
+        }
+      };
+      xmlhttp.open("GET", "haha.html", true);
+      xmlhttp.send();
+    }
+  </script>
+  <p>hahaa</p>
+  <button type="button" onclick="testAjax()">Nhấn vào</button>
+  <p id="demo">hahaa00</p>
+  <p id="demo">hahaa11</p>
+</body>
+</html>

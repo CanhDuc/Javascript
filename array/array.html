@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array</title>
+</head>
+<body>
+	<script>
+		var arr = [];
+		var count = 0;
+		while(true){
+			count++;
+			if(count >= 100){
+				break;
+			}
+			arr.push(Math.floor(Math.random()*100));
+		}
+
+		console.log("\nMang chua sap xep : ");
+
+		for(var i = 0; i < arr.length; i++){
+			console.log(arr[i]);
+		}
+
+		arr.sort();
+
+		console.log("\nMang da sap xep : ");
+		for(var i = 0; i < arr.length; i++){
+			console.log(arr[i]);
+		}
+
+		// console.log("\nMang da sap xep in theo foreach: ");
+		// forEach(){
+		// 	console.log();
+		// }
+
+	</script>
+</body>
+</html>
